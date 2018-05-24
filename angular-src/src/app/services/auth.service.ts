@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tokenNotExpired } from 'angular2-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Api } from '../api'
 
 @Injectable()
@@ -13,7 +13,7 @@ export class AuthService {
 	  })
 	};
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
 
 	registerCleaner(cleaner){
 	    return this.http.post(this.api+'/cleaner/register', cleaner, this.httpOptions)
@@ -28,7 +28,7 @@ export class AuthService {
 	}
 
 	loggedIn(){
-		return tokenNotExpired()
+		return !this.jwtHelper.isTokenExpired()
 	}
 
 }

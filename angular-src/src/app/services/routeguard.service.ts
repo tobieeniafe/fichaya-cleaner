@@ -10,7 +10,7 @@ export class RouteGuardService {
 
 	canActivate(){
       if(this._auth.loggedIn()){
-        this._router.navigate(['/customer/dashboard']);
+        this._router.navigate(['/cleaner/dashboard']);
       }
       return true
     }

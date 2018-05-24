@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
 	            this.preloader = false
 	          }else if (data.success == true){
 	          	Materialize.toast(data.message, 3000, 'green white-text');
-	          	localStorage.setItem('token', data.token);
+	          	localStorage.setItem('access_token', data.token);
 	            this.router.navigate(['/cleaner/dashboard']);
 	          }else{
 	          	Materialize.toast('uh-oh', 3000, 'red white-text');
@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
 	            this.preloader = false
 	          }else if (data.success == true){
 	          	Materialize.toast(data.message, 3000, 'green white-text');
-	          	localStorage.setItem('token', data.token);
+	          	localStorage.setItem('access_token', data.token);
 	            this.router.navigate(['/cleaner/dashboard']);
 	          }else{
 	          	Materialize.toast('uh-oh', 3000, 'red white-text');

@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { AuthHttp, AuthConfig } from 'angular2-jwt';
-import { ImageUploadModule } from 'angular2-image-upload';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { AppComponent } from './app.component';
@@ -31,6 +30,10 @@ const routes: Routes = [
   { path: 'cleaner/account',  component: AccountComponent, canActivate: [AuthGuardService] },
 ];
 
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,11 @@ const routes: Routes = [
     HttpClientModule,
     CommonModule,
     RouterModule.forRoot(routes),
-    ImageUploadModule.forRoot()
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
   ],
   providers: [ValidatorService, AuthService, AuthGuardService, RouteGuardService],
   bootstrap: [AppComponent]

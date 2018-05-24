@@ -12,11 +12,11 @@ export class BookingService {
 
 	constructor(private http: HttpClient) {
 		this.http = http;
-	    this.token = localStorage.getItem('token');
+	    this.token = localStorage.getItem('access_token');
 	}
 
 	getBookings() {
-		this.token = localStorage.getItem('token');
+		this.token = localStorage.getItem('access_token');
 	    let httpOptions = {
 		  headers: new HttpHeaders({
 		    'Content-Type':  'application/json',
@@ -27,7 +27,7 @@ export class BookingService {
 	}
 
 	markAsComplete(id) {
-		this.token = localStorage.getItem('token');
+		this.token = localStorage.getItem('access_token');
 	    let httpOptions = {
 		  headers: new HttpHeaders({
 		    'Content-Type':  'application/json',

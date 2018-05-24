@@ -13,7 +13,7 @@ declare var $: any;
 })
 export class BookingComponent implements OnInit {
 
-	title: string = 'Booking History'
+	title: string = 'Booking'
 	bookings: any;
 
 	constructor(private router: Router, private bookingService: BookingService) {

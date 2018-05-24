@@ -33,7 +33,7 @@ export class SidebarComponent implements OnInit {
 
 	logOut(){
 		Materialize.toast('logged out', 3000, 'green white-text');
-		localStorage.removeItem('token');
+		localStorage.removeItem('access_token');
 		this.setLoggedIn(false);
     	this.router.navigate(['/cleaner/login']);
 	}

@@ -13,7 +13,7 @@ export class SidebarService {
 
   constructor(public http: HttpClient) {
     this.http = http;
-    this.token = localStorage.getItem('token');
+    this.token = localStorage.getItem('access_token');
   }
 
   getUserName() {

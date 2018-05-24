@@ -13,7 +13,31 @@
             <form (submit)="updateDetails()" novalidate="">
                 <h5>Personal Information</h5>
                 
-                
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="Firstname" name="firstname" [(ngModel)]="cleaner.name.firstname" disabled="">
+                </div>
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="Lastname" name="lastname" [(ngModel)]="cleaner.name.lastname" disabled="">
+                </div>
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="Phone no" name="phone" [(ngModel)]="cleaner.phone">
+                </div>
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="Email" name="email" [(ngModel)]="cleaner.email" disabled="">
+                </div>
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="BVN" name="bvn" [(ngModel)]="cleaner.bank_details.bvn" disabled="">
+                </div>
+                 <div class="input-field col m3 s12">
+                    <select name="bank" #bank>
+                        <option selected="" [ngValue]="cleaner.bank_details.bank">{{cleaner.bank_details.bank}}</option>
+                        <option *ngFor="let b of allBanks" [ngValue]="b.name">{{b.name}}</option>
+                    </select>
+                </div>
+                <div class="input-field col m3 s12">
+                  <input type="text" placeholder="Account No" name="account_no"  [(ngModel)]="cleaner.bank_details.account_no">
+                </div>
+
                 <div class="col s12 center" style="padding-top: 10px">
                     <button class="btn btn-primary" type="submit">Update</button>
                 </div>
