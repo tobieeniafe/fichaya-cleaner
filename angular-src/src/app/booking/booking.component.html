@@ -1,0 +1,45 @@
+
+<div class="main-wrap">    
+    <div class="body-view">
+        <app-sidebar></app-sidebar>
+        <!-- container starts --> 
+        <div class="container">
+            <h3 style="padding-left: 10rem"><a href="#" data-activates="slide-out" class="side-nav-open">
+            	<i class="ion-navicon"></i>
+            </a></h3>
+
+            <h4>{{title}}</h4>
+
+            <div class="table-body"><table class="striped">
+                <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Address</th>
+                      <th>Bus-Stop, Area</th>
+                      <th>Location</th>
+                      <th>Type</th>
+                      <th>Completed</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let b of bookings">
+                    <td>{{b.details.date}}</td>
+                    <td>{{b.address.address}}</td>
+                    <td>{{b.address.busstop}}, {{b.address.area}}</td>
+                    <td>{{b.address.location}}</td>
+                    <td>{{b.type}}</td>
+                    <td>
+                      <div class="switch">
+                          <label>Off<input type="checkbox" [checked]="b.is_complete" (change)='markAsComplete(b._id)' value="{{b.is_complete}}"><span class="lever"></span>On</label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+            </table></div>
+
+        </div>
+        <!-- container ends -->      
+    </div>
+</div>
+

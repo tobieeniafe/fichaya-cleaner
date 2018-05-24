@@ -1,0 +1,27 @@
+.side-nav {
+	background-color: #000080 !important;
+	color: #fff;
+	padding-top: 2rem;
+}
+
+.side-nav li a h6 {
+	color: #fff !important;
+}
+
+.ion{
+	font-size: 30px;
+}
+
+.avatar{
+	width: 150px;
+	height: 150px;
+}
+
+.logout: hover{
+	color: #000080 !important;
+	background-color: #fff;	
+}
+
+li a h6 {
+	font-size: 20px;
+}

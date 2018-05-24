@@ -1,0 +1,38 @@
+
+.body-view {
+    background-color: #fff;
+    /*min-height: 100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    /*padding: 2rem 2rem 2rem 4rem;*/
+}
+
+.hamburger:hover{
+	cursor: pointer;
+    color: #000080;
+}
+
+.ion-ios-close{
+    display: none;
+}
+
+.table-body{
+    box-shadow: 0px 1px 15px 1px #ccc;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.side-nav-open, h3, th{
+    color: #000080;
+}
+
+@media (max-width: 450px) {
+  .body-view, .table-body{
+    padding: 0;
+  }
+}

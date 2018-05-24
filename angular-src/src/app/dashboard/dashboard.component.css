@@ -1,0 +1,26 @@
+
+.body-view {
+    background-color: #fff;
+    /*min-height: 100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    padding: 2rem 5rem;
+}
+
+.hamburger:hover{
+	cursor: pointer;
+    color: #000080;
+}
+
+.ion-ios-close{
+    display: none;
+}
+
+.side-nav-open, h3{
+    color: #000080;
+}

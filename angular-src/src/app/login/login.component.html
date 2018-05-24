@@ -1,0 +1,48 @@
+
+<app-navbar></app-navbar>
+
+<div class="back">
+  <div class="container row">
+	    <div class="col m6 s12 white-text"><h4 style="padding-top: 5rem">Become a partner with fichaya and make money cleaning.</h4></div>
+
+	    <div class="col m6 s12 form-body" align="center">
+	    		<h4 class="primary-text">Cleaner Login</h4>
+		    	<form (submit)="submitForm()" novalidate="">
+		    		<div class="row">
+		    			<div class="input-field col m12 s12">
+					    	<input type="text" placeholder="email or phone number" name="loginvalue" [(ngModel)]="loginvalue">
+						</div>
+						<div class="input-field col m12 s12">
+						    <input type="password" placeholder="password" name="password" [(ngModel)]="password">
+						</div>
+						<div class="input-field col m12 s12" *ngIf="!preloader">
+			    			<button class="btn btn-primary" type="submit">Login <i class="ion-log-in"></i></button>
+			    		</div>
+		    		</div>
+		    	</form>
+
+		    <div align='center' *ngIf="preloader">
+			    <div class="preloader-wrapper small active">
+			      <div class="spinner-layer">
+			        <div class="circle-clipper left">
+			          <div class="circle"></div>
+			        </div>
+			        <div class="gap-patch">
+			          <div class="circle"></div>
+			        </div>
+			        <div class="circle-clipper right">
+			          <div class="circle"></div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+
+	    	<h6>Want to be part of Fichaya? <a routerLink="/cleaner/register">Join Us</a></h6>
+	    	
+	    	
+
+	    </div>
+  </div>
+</div>
+
+					
