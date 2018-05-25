@@ -13,6 +13,9 @@
 					<input type="text" placeholder="Email" name="">
 				</div>
 				<div class="input-field col m3 s12">
+					<input type="text" placeholder="Phone no" name="">
+				</div>
+				<div class="input-field col m3 s12">
 					<input type="text" placeholder="Address" name="">
 				</div>
 				<div class="input-field col m3 s12">
@@ -22,15 +25,28 @@
 					<input type="text" placeholder="Area" name="">
 				</div>
 				<div class="input-field col m3 s12">
-					<input type="text" placeholder="Location" name="">
+					<select name="location" #location>
+			            <option [ngValue]="island">Island</option>
+			            <option [ngValue]="mainland">Mainland</option>
+			        </select>
 				</div>
 				<div class="input-field col m3 s12">
-					<input type="text" placeholder="Phone no" name="">
+					<select name="banks" #banks>
+                        <option *ngFor="let b of allBanks" [ngValue]="b.name">{{b.name}}</option>
+                    </select>
 				</div>
 				<div class="input-field col m3 s12">
-					
+					<input type="text" placeholder="Account No" name="accont_no">
 				</div>
-				
+				<div class="input-field col m3 s12">
+					<input type="text" placeholder="BVN" name="bvn">
+				</div>
+				<div class="input-field col m3 s12">
+					<input type="text" placeholder="" name="">
+				</div>
+				<div class="col s12 center" style="padding-top: 10px">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </div>
 				
 			</form>
 		</div>
