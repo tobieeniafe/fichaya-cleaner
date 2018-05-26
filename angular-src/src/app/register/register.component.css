@@ -1,17 +1,24 @@
 .back{
-  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/assets/images/bg-2.jpg');
+  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: #111;
   padding-top: 7rem;
+  padding-bottom: 4rem;
   text-align: center;
   min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000080;
 }
 
 .form-body{
 	background-color: #fff;
 	padding: 2rem 5rem !important;
+  max-width: 65%;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 450px) {
@@ -22,4 +29,17 @@
   .form-body{
     padding: 1rem 2rem !important;
   }
+}
+
+.payment-details, .identification{
+  display: none;
+}
+
+
+.image-upload-box{
+  border: 2px dotted #000080;
+  padding: 1rem !important;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000080;
 }

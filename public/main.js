@@ -255,8 +255,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Api", function() { return Api; });
 var Api = /** @class */ (function () {
     function Api() {
-        this.endpoint = 'https://fichaya-api.herokuapp.com/api/v1';
-        //readonly endpoint: string = 'http://localhost:3000/api/v1'
+        //readonly endpoint: string = 'https://fichaya-api.herokuapp.com/api/v1'
+        this.endpoint = 'http://localhost:3000/api/v1';
     }
     return Api;
 }());
@@ -353,12 +353,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var _register_register_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./register/register.service */ "./src/app/register/register.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -416,7 +418,7 @@ var AppModule = /** @class */ (function () {
                     }
                 })
             ],
-            providers: [_services_validator_service__WEBPACK_IMPORTED_MODULE_9__["ValidatorService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_10__["AuthService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"], _services_routeguard_service__WEBPACK_IMPORTED_MODULE_12__["RouteGuardService"]],
+            providers: [_services_validator_service__WEBPACK_IMPORTED_MODULE_9__["ValidatorService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_10__["AuthService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"], _services_routeguard_service__WEBPACK_IMPORTED_MODULE_12__["RouteGuardService"], _register_register_service__WEBPACK_IMPORTED_MODULE_19__["RegisterService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
@@ -838,7 +840,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main_h {\r\n  position: fixed;\r\n  max-height: 50px;\r\n  z-index: 999;\r\n  width: 100%;\r\n  padding-top: 15px;\r\n  background: none;\r\n  overflow: hidden;\r\n  transition: all 0.3s;\r\n  top: 0px;\r\n  padding-bottom: 6px !important;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .main_h {\r\n    padding-top: 20px;\r\n  }\r\n}\r\n.open-nav {\r\n  min-height: 200px !important;\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n}\r\n.open-nav .mobile-toggle {\r\n  transform: rotate(-90deg);\r\n  -webkit-transform: rotate(-90deg);\r\n}\r\n.sticky {\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n  /*opacity: 1;*/\r\n  top: 0px;\r\n  /*border-bottom: 1px solid gainsboro;*/\r\n}\r\n.logo {\r\n  width: 50px;\r\n  font-size: 25px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  float: left;\r\n  display: block;\r\n  margin-top: 0;\r\n  line-height: 1;\r\n  margin-bottom: 10px;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .logo {\r\n    float: none;\r\n    padding-left: 10px;\r\n  }\r\n}\r\nnav {\r\n  float: right;\r\n  width: 60%;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav {\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul {\r\n  list-style: none;\r\n  overflow: hidden;\r\n  text-align: right;\r\n  float: right;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul {\r\n    padding-top: 10px;\r\n    margin-bottom: 22px;\r\n    float: left;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul li {\r\n  display: inline-block;\r\n  margin-left: 35px;\r\n  line-height: 1.5;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul li {\r\n    width: 100%;\r\n    padding: 7px 0;\r\n    margin: 0;\r\n  }\r\n}\r\nnav ul li a {\r\n  color: #fff;\r\n  text-transform: uppercase;\r\n}\r\nnav ul li a:hover {\r\n  color: #000080;\r\n  font-weight: bold;\r\n}\r\n.mobile-toggle {\r\n  display: none;\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 0;\r\n  width: 30px;\r\n  transition: all 200ms ease-in;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .mobile-toggle {\r\n    display: block;\r\n  }\r\n}\r\n.mobile-toggle span {\r\n  width: 30px;\r\n  height: 4px;\r\n  margin-bottom: 6px;\r\n  border-radius: 1000px;\r\n  background: #fff;\r\n  display: block;\r\n}\r\n.row-nav {\r\n  width: 100%;\r\n  max-width: 940px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  /*padding: 0 2%;*/\r\n}\r\na {\r\n  text-decoration: none;\r\n}\r\n@-webkit-keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n@keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n"
+module.exports = ".main_h {\r\n  position: fixed;\r\n  max-height: 65px;\r\n  z-index: 999;\r\n  width: 100%;\r\n  padding: 1rem;\r\n  background: none;\r\n  overflow: hidden;\r\n  transition: all 0.3s;\r\n  top: 0px;\r\n  padding-bottom: 6px !important;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .main_h {\r\n    padding-top: 20px;\r\n  }\r\n}\r\n.open-nav {\r\n  min-height: 200px !important;\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n}\r\n.open-nav .mobile-toggle {\r\n  transform: rotate(-90deg);\r\n  -webkit-transform: rotate(-90deg);\r\n}\r\n.sticky {\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n  /*opacity: 1;*/\r\n  top: 0px;\r\n  /*border-bottom: 1px solid gainsboro;*/\r\n}\r\n.logo {\r\n  width: 50px;\r\n  font-size: 25px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  float: left;\r\n  display: block;\r\n  margin-top: 0;\r\n  line-height: 1;\r\n  margin-bottom: 10px;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .logo {\r\n    float: none;\r\n    padding-left: 10px;\r\n  }\r\n}\r\nnav {\r\n  float: right;\r\n  width: 60%;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav {\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul {\r\n  list-style: none;\r\n  overflow: hidden;\r\n  text-align: right;\r\n  float: right;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul {\r\n    padding-top: 10px;\r\n    margin-bottom: 22px;\r\n    float: left;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul li {\r\n  display: inline-block;\r\n  margin-left: 35px;\r\n  line-height: 1;  /*1.5*/\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul li {\r\n    width: 100%;\r\n    padding: 7px 0;\r\n    margin: 0;\r\n  }\r\n}\r\nnav ul a {\r\n  color: #fff;\r\n  text-transform: uppercase; \r\n  padding: 0.3rem 0;\r\n}\r\nnav ul a:hover {\r\n  color: #000080;\r\n  font-weight: bold;\r\n  background-color: transparent;\r\n  border-bottom: 1.5px solid #000080;\r\n}\r\n.mobile-toggle {\r\n  display: none;\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 0;\r\n  width: 30px;\r\n  transition: all 200ms ease-in;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .mobile-toggle {\r\n    display: block;\r\n  }\r\n}\r\n.mobile-toggle span {\r\n  width: 30px;\r\n  height: 4px;\r\n  margin-bottom: 6px;\r\n  border-radius: 1000px;\r\n  background: #fff;\r\n  display: block;\r\n}\r\n.row-nav {\r\n  width: 100%;\r\n  max-width: 940px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  padding: 0;\r\n}\r\na {\r\n  text-decoration: none;\r\n}\r\n@-webkit-keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n@keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n"
 
 /***/ }),
 
@@ -849,7 +851,7 @@ module.exports = ".main_h {\r\n  position: fixed;\r\n  max-height: 50px;\r\n  z-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"main_h\">\n    <div class=\"row-nav\">\n        <a class=\"logo\" href=\"\">FICHAYA</a>\n\n        <div class=\"mobile-toggle\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </div>\n\n        <nav>\n            <ul>\n                <li><a href=\"\">Home</a></li>\n                <li><a routerLink='/cleaner/register' routerLinkActive='active'>Register</a></li>\n                <li><a routerLink='/cleaner/login' routerLinkActive='active' class=\"button button-primary\">Login</a></li>\n            </ul>\n        </nav>\n        \n    </div> \n</header>\n"
+module.exports = "<header class=\"main_h\">\n    <div class=\"row-nav\">\n        <a class=\"logo\" href=\"\">FICHAYA</a>\n\n        <div class=\"mobile-toggle\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </div>\n\n        <nav>\n            <ul>\n                <li><a routerLink='/cleaner/register' routerLinkActive='active'>Register</a></li>\n                <li><a routerLink='/cleaner/login' routerLinkActive='active' class=\"\">Login</a></li>\n            </ul>\n        </nav>\n        \n    </div> \n</header>\n"
 
 /***/ }),
 
@@ -941,7 +943,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/assets/images/bg-2.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n  }\r\n}"
+module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  padding-bottom: 4rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n  color: #000080;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n  max-width: 65%;\r\n  border-radius: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n  }\r\n}\r\n\r\n.payment-details, .identification{\r\n  display: none;\r\n}\r\n\r\n.image-upload-box{\r\n  border: 2px dotted #000080;\r\n  padding: 1rem !important;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  color: #000080;\r\n}"
 
 /***/ }),
 
@@ -952,7 +954,7 @@ module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"back\">\n\t<div class=\"container row\">\n\t\t<div class=\"form-body m12 s12 row\">\n\t\t\t<h4>Cleaning Associate's Registration Form</h4>\n\t\t\t<form>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Phone no\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Bus-Stop\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Area\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<select name=\"location\" #location>\n\t\t\t            <option [ngValue]=\"island\">Island</option>\n\t\t\t            <option [ngValue]=\"mainland\">Mainland</option>\n\t\t\t        </select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<select name=\"banks\" #banks>\n                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n                    </select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"Account No\" name=\"accont_no\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"BVN\" name=\"bvn\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t<input type=\"text\" placeholder=\"\" name=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col s12 center\" style=\"padding-top: 10px\">\n                    <button class=\"btn btn-primary\" type=\"submit\">Register</button>\n                </div>\n\t\t\t\t\n\t\t\t</form>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<app-navbar></app-navbar>\n\n<div class=\"back\">\n\t<div class=\"form-body row\">\n\t\t\t<h4>Cleaning Associate's Registration Form</h4>\n\t\t\t<h6 class=\"red-text\"><b>NB: ALL FIELDS ARE REQUIRED</b></h6>\n\t\t\t<br>\n\t\t\t<form novalidate>\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal start\n\t\t\t\t\t============= -->\n\t\t\t\t<div class=\"personal row col m12 s12\">\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m5 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m7 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Bus-Stop\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Area (Lekki, Ikoyi, Yaba)\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"location\" #location>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Location</option>\n\t\t\t\t            <option [ngValue]=\"island\">Island</option>\n\t\t\t\t            <option [ngValue]=\"mainland\">Mainland</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"experience\" #experience>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Cleaning Experience</option>\n\t\t\t\t            <option [ngValue]=\"yes\">Yes</option>\n\t\t\t\t            <option [ngValue]=\"no\">No</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Password\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Confirm Password\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: right;\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal end\n\t\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"identification row col m12 s12\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col s12 m6\">\n\t\t\t\t\t\t\t<h6>Form of Identification</h6>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id1\">\n\t\t\t\t\t\t      <label for=\"id1\">National ID Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id2\">\n\t\t\t\t\t\t      <label for=\"id2\">International Passport</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id3\">\n\t\t\t\t\t\t      <label for=\"id3\">Driver's Licence</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id4\">\n\t\t\t\t\t\t      <label for=\"id4\">Voter's Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col s12 m6 center\">\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\">\n\t\t\t\t\t\t\t\t<input type=\"file\" id=\"file\" style=\"display: none\" (change)=\"handleFileInput($event)\" #ImageID>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"image-upload-box col s12 m8 center\" (click)=\"ImageID.click()\">\n\t\t\t\t\t\t\t\t<i class=\"ion-camera center\" style=\"font-size: 50px\"></i>\n\t\t\t\t\t\t\t\t<p class=\"center\">Upload Identification Image (.jpg &amp; .png only)</p>\n\t\t\t\t\t\t\t\t{{filename}}\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\"></div>\n\t\t\t\t\t\t\t<!-- <div class=\"btn\">\n\t\t\t\t\t\t        <span>Profile Picture</span>\n\t\t\t\t\t\t        <input type=\"file\" id=\"file\" (change)=\"handleFileInput($event)\" #ImageID>\n\t\t\t\t\t\t    </div>\n\t\t\t\t\t\t    <div class=\"file-path-wrapper\">\n\t\t\t\t\t\t        <input class=\"file-path validate\" type=\"text\">\n\t\t\t\t\t\t    </div> -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div> \n\n\t\t\t\t\t<h5 class=\"center\">Guarantor's Details</h5>\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m12 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-personal\" style=\"float: left;\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\t\t\t\t\t\t<button class=\"btn show-payment-details\" style=\"float: right;\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification end\n\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"row col s12 m12 payment-details\">\n\t\t\t\t\t<h5 class=\"center\">Let's Have Your Payment Details</h5>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Name\" name=\"account_name\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Number\" name=\"accont_no\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<select name=\"banks\" #banks>\n\t                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n\t                    </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"BVN\" name=\"bvn\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: left;\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\t\t\t\t\t\t<button class=\"btn\" style=\"float: right;\">Register <i class=\"ion-ios-paperplane\"></i></button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details end\n\t\t\t\t============= -->\n\t\t\t\t\n\t\t\t</form>\n\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -967,6 +969,7 @@ module.exports = "<div class=\"back\">\n\t<div class=\"container row\">\n\t\t<di
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _register_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.service */ "./src/app/register/register.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -977,8 +980,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent() {
+    function RegisterComponent(registerService) {
+        this.registerService = registerService;
         this.allBanks = [
             { name: "Access Bank", slug: "access-bank", code: "044", longcode: "044150149" },
             { name: "Citibank Nigeria", slug: "citibank-nigeria", code: "023", longcode: "023150005" },
@@ -1006,20 +1011,107 @@ var RegisterComponent = /** @class */ (function () {
             { name: "Providus Bank", slug: "providus-bank", code: "101", longcode: "" },
             { name: "Parallex Bank", slug: "parallex-bank", code: "526", longcode: "" }
         ];
+        this.fileToUpload = null;
         $(document).ready(function () {
             $('select').material_select();
+            $(".show-identification").click(function () {
+                $('.personal').fadeOut('1');
+                $('.payment-details').fadeOut('1');
+                $('.identification').fadeIn('1500');
+            });
+            $(".show-personal").click(function () {
+                $('.identification').fadeOut('1');
+                $('.payment-details').fadeOut('1');
+                $('.personal').fadeIn('1500');
+            });
+            $(".show-payment-details").click(function () {
+                $('.personal').fadeOut('1');
+                $('.identification').fadeOut('1');
+                $('.payment-details').fadeIn('1500');
+            });
         });
     }
     RegisterComponent.prototype.ngOnInit = function () { };
+    RegisterComponent.prototype.handleFileInput = function (file) {
+        this.fileToUpload = file.target.files[0];
+        this.filename = this.fileToUpload.name;
+        this.getFileExtention(this.filename);
+    };
+    RegisterComponent.prototype.uploadFileToActivity = function () {
+        this.registerService.uploadImage(this.fileToUpload).subscribe(function (data) {
+            console.log(data.data.link);
+            Materialize.toast('Image upload successful', 1500, 'green white-text');
+        }, function (err) { return (Materialize.toast('Image upload failed', 1500, 'red white-text')); });
+    };
+    RegisterComponent.prototype.getFileExtention = function (fname) {
+        var extension = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2);
+        if (extension !== 'jpg' && extension !== 'png') {
+            Materialize.toast('Selected file is not an image', 3000, 'red white-text');
+        }
+        else {
+            this.uploadFileToActivity();
+        }
+    };
     RegisterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-register',
             template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
             styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_register_service__WEBPACK_IMPORTED_MODULE_1__["RegisterService"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/register/register.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/register/register.service.ts ***!
+  \**********************************************/
+/*! exports provided: RegisterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterService", function() { return RegisterService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RegisterService = /** @class */ (function () {
+    function RegisterService(httpClient) {
+        this.httpClient = httpClient;
+    }
+    RegisterService.prototype.uploadImage = function (fileToUpload) {
+        var endpoint = 'https://api.imgur.com/3/image';
+        var formData = new FormData();
+        formData.append('image', fileToUpload, fileToUpload.name);
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Authorization': 'Client-ID aab3505f42b5d63'
+            })
+        };
+        return this.httpClient.post(endpoint, formData, httpOptions);
+    };
+    RegisterService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], RegisterService);
+    return RegisterService;
 }());
 
 

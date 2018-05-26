@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegisterService } from './register.service'
 declare var Materialize: any;
 declare var $: any;
 
@@ -38,13 +39,58 @@ export class RegisterComponent implements OnInit {
 	    {name:"Providus Bank",slug:"providus-bank",code:"101",longcode:""},
 	    {name:"Parallex Bank",slug:"parallex-bank",code:"526",longcode:""}
 	];
+	fileToUpload: File = null;
+	filename: string;
 
-	constructor() {
+	constructor(private registerService: RegisterService) {
 		$(document).ready(function() {
 	       	$('select').material_select()
+
+	       	$(".show-identification").click(function(){
+			    $('.personal').fadeOut('1')
+			    $('.payment-details').fadeOut('1')
+			    $('.identification').fadeIn('1500')
+			});
+
+			$(".show-personal").click(function(){
+			    $('.identification').fadeOut('1')
+			    $('.payment-details').fadeOut('1')
+			    $('.personal').fadeIn('1500')
+			});
+
+			$(".show-payment-details").click(function(){
+			    $('.personal').fadeOut('1')
+			    $('.identification').fadeOut('1')
+			    $('.payment-details').fadeIn('1500')
+			});
 	    })
 	}
 
 	ngOnInit() {}
+
+	handleFileInput(file) {
+	    this.fileToUpload = <File>file.target.files[0];
+	    this.filename = this.fileToUpload.name
+	    this.getFileExtention(this.filename)
+	}
+
+	uploadFileToActivity() {
+	    this.registerService.uploadImage(this.fileToUpload).subscribe(
+	    	(data: any) => {
+	    		console.log(data.data.link)
+	    		Materialize.toast('Image upload successful', 1500, 'green white-text');
+	    	},
+	    	err => (Materialize.toast('Image upload failed', 1500, 'red white-text'))
+	    );
+	}
+
+	getFileExtention(fname){
+		let extension = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2)
+		if (extension !== 'jpg' && extension !== 'png') { 
+			Materialize.toast('Selected file is not an image', 3000, 'red white-text');
+		} else {
+			this.uploadFileToActivity()
+		}
+	}
 
 }

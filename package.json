@@ -9,7 +9,8 @@
     "start-angular": "cd angular-src && ng serve",
     "build": "cd angular-src && ng build",
     "deploy": "git add . && git commit -m 'deploy' && git push github master && git push heroku master && git push origin master",
-    "deploy-prod": "cd angular-src && ng build --env=prod && cd .. && git add . && git commit -m 'prod' && git push github master && git push heroku master"
+    "deploy-prod": "cd angular-src && ng build --env=prod && cd .. && git add . && git commit -m 'prod' && git push github master && git push heroku master && git push origin master",
+    "push": "git push github master && git push heroku master && git push origin master"
   },
   "author": "tobieeniafe",
   "license": "ISC",

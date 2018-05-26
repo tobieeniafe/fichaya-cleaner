@@ -19,6 +19,7 @@ import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RegisterService } from './register/register.service';
 
 
 const routes: Routes = [
@@ -57,7 +58,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [ValidatorService, AuthService, AuthGuardService, RouteGuardService],
+  providers: [ValidatorService, AuthService, AuthGuardService, RouteGuardService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
