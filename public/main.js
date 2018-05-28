@@ -255,8 +255,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Api", function() { return Api; });
 var Api = /** @class */ (function () {
     function Api() {
-        //readonly endpoint: string = 'https://fichaya-api.herokuapp.com/api/v1'
-        this.endpoint = 'http://localhost:3000/api/v1';
+        this.endpoint = 'https://fichaya-api.herokuapp.com/api/v1';
+        //readonly endpoint: string = 'http://localhost:3000/api/v1'
     }
     return Api;
 }());
@@ -387,6 +387,7 @@ var routes = [
     { path: 'cleaner/dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__["DashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
     { path: 'cleaner/booking', component: _booking_booking_component__WEBPACK_IMPORTED_MODULE_14__["BookingComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
     { path: 'cleaner/account', component: _account_account_component__WEBPACK_IMPORTED_MODULE_15__["AccountComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
+    { path: '**', component: _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"] }
 ];
 function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -782,7 +783,7 @@ var LoginComponent = /** @class */ (function () {
                 _this.preloader = false;
                 _this.router.navigate(['/cleaner/login']);
             }
-        }, function (err) { return (Materialize.toast("something's not right", 3000, 'red white-text')); }, function () { return console.log(); });
+        }, function (err) { return (Materialize.toast("something's not right", 3000, 'red white-text')); }, function () { return _this.preloader = false; });
     };
     LoginComponent.prototype.submitPhoneForm = function () {
         var _this = this;
@@ -816,7 +817,7 @@ var LoginComponent = /** @class */ (function () {
                 _this.preloader = false;
                 _this.router.navigate(['/cleaner/login']);
             }
-        }, function (err) { return (Materialize.toast("something's not right", 3000, 'red white-text')); }, function () { return console.log(); });
+        }, function (err) { return (Materialize.toast("something's not right", 3000, 'red white-text')); }, function () { return _this.preloader = false; });
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -943,7 +944,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  padding-bottom: 4rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n  color: #000080;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n  max-width: 65%;\r\n  border-radius: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n  }\r\n}\r\n\r\n.payment-details, .identification{\r\n  display: none;\r\n}\r\n\r\n.image-upload-box{\r\n  border: 2px dotted #000080;\r\n  padding: 1rem !important;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  color: #000080;\r\n}"
+module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  padding-bottom: 4rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n  color: #000080;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n  max-width: 65%;\r\n  border-radius: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n    max-width: 98%;\r\n  }\r\n}\r\n\r\n.payment-details, .identification{\r\n  display: none;\r\n}\r\n\r\n.image-upload-box{\r\n  border: 2px dotted #000080;\r\n  padding: 1rem !important;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  color: #000080;\r\n}"
 
 /***/ }),
 
@@ -954,7 +955,7 @@ module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n\n<div class=\"back\">\n\t<div class=\"form-body row\">\n\t\t\t<h4>Cleaning Associate's Registration Form</h4>\n\t\t\t<h6 class=\"red-text\"><b>NB: ALL FIELDS ARE REQUIRED</b></h6>\n\t\t\t<br>\n\t\t\t<form novalidate>\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal start\n\t\t\t\t\t============= -->\n\t\t\t\t<div class=\"personal row col m12 s12\">\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m5 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m7 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Bus-Stop\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Area (Lekki, Ikoyi, Yaba)\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"location\" #location>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Location</option>\n\t\t\t\t            <option [ngValue]=\"island\">Island</option>\n\t\t\t\t            <option [ngValue]=\"mainland\">Mainland</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"experience\" #experience>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Cleaning Experience</option>\n\t\t\t\t            <option [ngValue]=\"yes\">Yes</option>\n\t\t\t\t            <option [ngValue]=\"no\">No</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Password\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Confirm Password\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: right;\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal end\n\t\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"identification row col m12 s12\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col s12 m6\">\n\t\t\t\t\t\t\t<h6>Form of Identification</h6>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id1\">\n\t\t\t\t\t\t      <label for=\"id1\">National ID Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id2\">\n\t\t\t\t\t\t      <label for=\"id2\">International Passport</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id3\">\n\t\t\t\t\t\t      <label for=\"id3\">Driver's Licence</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id4\">\n\t\t\t\t\t\t      <label for=\"id4\">Voter's Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col s12 m6 center\">\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\">\n\t\t\t\t\t\t\t\t<input type=\"file\" id=\"file\" style=\"display: none\" (change)=\"handleFileInput($event)\" #ImageID>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"image-upload-box col s12 m8 center\" (click)=\"ImageID.click()\">\n\t\t\t\t\t\t\t\t<i class=\"ion-camera center\" style=\"font-size: 50px\"></i>\n\t\t\t\t\t\t\t\t<p class=\"center\">Upload Identification Image (.jpg &amp; .png only)</p>\n\t\t\t\t\t\t\t\t{{filename}}\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\"></div>\n\t\t\t\t\t\t\t<!-- <div class=\"btn\">\n\t\t\t\t\t\t        <span>Profile Picture</span>\n\t\t\t\t\t\t        <input type=\"file\" id=\"file\" (change)=\"handleFileInput($event)\" #ImageID>\n\t\t\t\t\t\t    </div>\n\t\t\t\t\t\t    <div class=\"file-path-wrapper\">\n\t\t\t\t\t\t        <input class=\"file-path validate\" type=\"text\">\n\t\t\t\t\t\t    </div> -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div> \n\n\t\t\t\t\t<h5 class=\"center\">Guarantor's Details</h5>\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m12 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-personal\" style=\"float: left;\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\t\t\t\t\t\t<button class=\"btn show-payment-details\" style=\"float: right;\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification end\n\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"row col s12 m12 payment-details\">\n\t\t\t\t\t<h5 class=\"center\">Let's Have Your Payment Details</h5>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Name\" name=\"account_name\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Number\" name=\"accont_no\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<select name=\"banks\" #banks>\n\t                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n\t                    </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"BVN\" name=\"bvn\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: left;\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\t\t\t\t\t\t<button class=\"btn\" style=\"float: right;\">Register <i class=\"ion-ios-paperplane\"></i></button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details end\n\t\t\t\t============= -->\n\t\t\t\t\n\t\t\t</form>\n\n\t</div>\n</div>"
+module.exports = "<app-navbar></app-navbar>\n\n<div class=\"back\">\n\t<div class=\"form-body row\">\n\t\t\t<h4>Cleaning Associate's Registration Form</h4>\n\t\t\t<h6 class=\"red-text\"><b>NB: ALL FIELDS ARE REQUIRED</b></h6>\n\t\t\t<br>\n\t\t\t<form (submit)=\"submitForm(location.value, experience.value, bank.value)\" novalidate=\"\">\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal start\n\t\t\t\t\t============= -->\n\t\t\t\t<div class=\"personal row col m12 s12\">\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"firstname\" [(ngModel)]=\"firstname\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"lastname\" [(ngModel)]=\"lastname\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m5 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"email\" [(ngModel)]=\"email\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m7 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"address\" [(ngModel)]=\"address\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Bus-Stop\" name=\"busstop\" [(ngModel)]=\"busstop\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Area (Lekki, Ikoyi, Yaba)\" name=\"area\" [(ngModel)]=\"area\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"location\" #location>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Location</option>\n\t\t\t\t            <option [ngValue]=\"island\">Island</option>\n\t\t\t\t            <option [ngValue]=\"mainland\">Mainland</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m3 s12\">\n\t\t\t\t\t\t<select name=\"experience\" #experience>\n\t\t\t\t\t\t\t<option selected=\"\" disabled=\"\">Cleaning Experience</option>\n\t\t\t\t            <option [ngValue]=\"yes\">Yes</option>\n\t\t\t\t            <option [ngValue]=\"no\">No</option>\n\t\t\t\t        </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"phone\" [(ngModel)]=\"phone\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" name=\"password\" [(ngModel)]=\"password\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m4 s12\">\n\t\t\t\t\t\t<input type=\"password\" placeholder=\"Confirm Password\" name=\"cpassword\" [(ngModel)]=\"cpassword\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: right;\" type=\"button\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\t\tpersonal end\n\t\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"identification row col m12 s12\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col s12 m6\">\n\t\t\t\t\t\t\t<h6>Form of Identification</h6>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id1\" [(ngModel)]=\"id_type\" value=\"National ID\">\n\t\t\t\t\t\t      <label for=\"id1\">National ID Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id2\" [(ngModel)]=\"id_type\" value=\"International Passport\">\n\t\t\t\t\t\t      <label for=\"id2\">International Passport</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id3\" [(ngModel)]=\"id_type\" value=\"Driver's Licence\">\n\t\t\t\t\t\t      <label for=\"id3\">Driver's Licence</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t    <p>\n\t\t\t\t\t\t      <input class=\"with-gap\" name=\"idtype\" type=\"radio\" id=\"id4\" [(ngModel)]=\"id_type\" value=\"Voter's Card\">\n\t\t\t\t\t\t      <label for=\"id4\">Voter's Card</label>\n\t\t\t\t\t\t    </p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col s12 m6 center\">\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\">\n\t\t\t\t\t\t\t\t<input type=\"file\" id=\"file\" style=\"display: none\" (change)=\"handleFileInput($event)\" #ImageID>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"image-upload-box col s12 m8 center\" (click)=\"ImageID.click()\">\n\t\t\t\t\t\t\t\t<i *ngIf=\"!imageisUploading && !imageUploaded\" class=\"ion-camera center\" style=\"font-size: 50px\"></i>\n\t\t\t\t\t\t\t\t<i *ngIf=\"imageUploaded\" class=\"ion-ios-checkmark-outline center\" style=\"font-size: 50px\"></i>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div align='center' *ngIf=\"imageisUploading\">\n\t\t\t\t\t\t\t\t    <div class=\"preloader-wrapper small active\">\n\t\t\t\t\t\t\t\t      <div class=\"spinner-layer\">\n\t\t\t\t\t\t\t\t        <div class=\"circle-clipper left\">\n\t\t\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t\t\t        <div class=\"gap-patch\">\n\t\t\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t\t\t        <div class=\"circle-clipper right\">\n\t\t\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t\t\t      </div>\n\t\t\t\t\t\t\t\t    </div>\n\t\t\t\t\t\t\t\t    <br>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"center\">Upload Identification Image (.jpg &amp; .png only)</p>\n\t\t\t\t\t\t\t\t{{filename}}\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col s12 m2 center\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div> \n\n\t\t\t\t\t<h5 class=\"center\">Guarantor's Details</h5>\n\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Firstname\" name=\"g_firstname\" [(ngModel)]=\"g_firstname\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Lastname\" name=\"g_lastname\" [(ngModel)]=\"g_lastname\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Phone\" name=\"g_phone\" [(ngModel)]=\"g_phone\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Email\" name=\"g_email\" [(ngModel)]=\"g_email\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m12 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Address\" name=\"g_address\" [(ngModel)]=\"g_address\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-personal\" style=\"float: left;\" type=\"button\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\t\t\t\t\t\t<button class=\"btn show-payment-details\" style=\"float: right;\" type=\"button\">Next <i class=\"ion-ios-arrow-thin-right\"></i></button>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tidentification end\n\t\t\t\t============= -->\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details start\n\t\t\t\t============= -->\n\n\t\t\t\t<div class=\"row col s12 m12 payment-details\">\n\t\t\t\t\t<h5 class=\"center\">Let's Have Your Payment Details</h5>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Name\" name=\"account_name\" [(ngModel)]=\"account_name\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Account Number\" name=\"accont_no\" [(ngModel)]=\"accont_no\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<select name=\"bank\" #bank>\n\t\t\t\t\t\t\t<option disabled=\"\" selected=\"\">Select Bank</option>\n\t                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n\t                    </select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"input-field col m6 s12\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"BVN\" name=\"bvn\" [(ngModel)]=\"bvn\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col s12 m12\">\n\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t<button class=\"btn show-identification\" style=\"float: left;\" type=\"button\">Back <i class=\"ion-ios-arrow-thin-left\"></i></button>\n\n\t\t\t\t\t\t<button class=\"btn\" style=\"float: right;\" type=\"submit\" *ngIf=\"!submitting\">Register <i class=\"ion-ios-paperplane\"></i></button>\n\t\t\t\t\t\t<div align='center' *ngIf=\"submitting\" style=\"float: right;\">\n\t\t\t\t\t\t    <div class=\"preloader-wrapper small active\">\n\t\t\t\t\t\t      <div class=\"spinner-layer\">\n\t\t\t\t\t\t        <div class=\"circle-clipper left\">\n\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t        <div class=\"gap-patch\">\n\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t        <div class=\"circle-clipper right\">\n\t\t\t\t\t\t          <div class=\"circle\"></div>\n\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t      </div>\n\t\t\t\t\t\t    </div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- ========\n\t\t\t\tpayment details end\n\t\t\t\t============= -->\n\t\t\t\t\n\t\t\t</form>\n\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -969,7 +970,10 @@ module.exports = "<app-navbar></app-navbar>\n\n<div class=\"back\">\n\t<div clas
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _register_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.service */ "./src/app/register/register.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _services_validator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/validator.service */ "./src/app/services/validator.service.ts");
+/* harmony import */ var _register_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./register.service */ "./src/app/register/register.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -981,9 +985,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
+
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(registerService) {
+    function RegisterComponent(router, registerService, authService, validatorService) {
+        this.router = router;
         this.registerService = registerService;
+        this.authService = authService;
+        this.validatorService = validatorService;
         this.allBanks = [
             { name: "Access Bank", slug: "access-bank", code: "044", longcode: "044150149" },
             { name: "Citibank Nigeria", slug: "citibank-nigeria", code: "023", longcode: "023150005" },
@@ -1012,6 +1022,10 @@ var RegisterComponent = /** @class */ (function () {
             { name: "Parallex Bank", slug: "parallex-bank", code: "526", longcode: "" }
         ];
         this.fileToUpload = null;
+        this.cleaner = {};
+        this.submitting = false;
+        this.imageUploaded = false;
+        this.imageisUploading = false;
         $(document).ready(function () {
             $('select').material_select();
             $(".show-identification").click(function () {
@@ -1038,10 +1052,22 @@ var RegisterComponent = /** @class */ (function () {
         this.getFileExtention(this.filename);
     };
     RegisterComponent.prototype.uploadFileToActivity = function () {
+        var _this = this;
+        this.imageisUploading = true;
         this.registerService.uploadImage(this.fileToUpload).subscribe(function (data) {
-            console.log(data.data.link);
-            Materialize.toast('Image upload successful', 1500, 'green white-text');
-        }, function (err) { return (Materialize.toast('Image upload failed', 1500, 'red white-text')); });
+            if (data.success == true) {
+                // console.log(data)
+                _this.id_url = data.data.link;
+                _this.imageisUploading = false;
+                _this.imageUploaded = true;
+                Materialize.toast('Image upload successful', 1500, 'green white-text');
+            }
+            else {
+                _this.imageisUploading = false;
+                _this.imageUploaded = false;
+                Materialize.toast('Image upload failed', 1500, 'red white-text');
+            }
+        }, function (err) { return (Materialize.toast('Image upload failed', 1500, 'red white-text'), _this.imageisUploading = false); });
     };
     RegisterComponent.prototype.getFileExtention = function (fname) {
         var extension = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2);
@@ -1052,13 +1078,73 @@ var RegisterComponent = /** @class */ (function () {
             this.uploadFileToActivity();
         }
     };
+    RegisterComponent.prototype.submitForm = function (location, experience, bank) {
+        var _this = this;
+        this.submitting = true;
+        this.cleaner = {
+            lastname: this.lastname,
+            firstname: this.firstname,
+            email: this.email,
+            password: this.password,
+            cpassword: this.cpassword,
+            address: this.address,
+            busstop: this.busstop,
+            location: location,
+            area: this.area,
+            phone: this.phone,
+            id_type: this.id_type,
+            id_url: this.id_url,
+            g_firstname: this.g_firstname,
+            g_lastname: this.g_lastname,
+            g_phone: this.g_phone,
+            g_email: this.g_email,
+            g_address: this.g_address,
+            account_name: this.account_name,
+            accont_no: this.accont_no,
+            bvn: this.bvn,
+            bank: bank,
+            experience: experience
+        };
+        console.log(this.cleaner);
+        if (!this.validatorService.ValidateRegistrationForm(this.cleaner)) {
+            Materialize.toast('All fields are required', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (this.cleaner.password !== this.cleaner.cpassword) {
+            Materialize.toast('Passwords do not match', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (!this.validatorService.ValidateEmail(this.cleaner.email)) {
+            Materialize.toast('Invalid email', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (!this.validatorService.ValidateEmail(this.cleaner.g_email)) {
+            Materialize.toast('Invalid guarantor email', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        this.authService.registerCleaner(this.cleaner).subscribe(function (data) {
+            if (data.success == true) {
+                // console.log(data)
+                Materialize.toast(data.message, 6500, 'green white-text');
+                _this.router.navigate(['/cleaner/login']);
+            }
+            else {
+                Materialize.toast(data.message, 1500, 'red white-text');
+                _this.submitting = false;
+            }
+        }, function (err) { return (Materialize.toast("Something's not right 1", 1500, 'red white-text'), _this.submitting = false); }, function () { return _this.submitting = false; });
+    };
     RegisterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-register',
             template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
             styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
         }),
-        __metadata("design:paramtypes", [_register_service__WEBPACK_IMPORTED_MODULE_1__["RegisterService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _register_service__WEBPACK_IMPORTED_MODULE_4__["RegisterService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _services_validator_service__WEBPACK_IMPORTED_MODULE_3__["ValidatorService"]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -1304,8 +1390,8 @@ var ValidatorService = /** @class */ (function () {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     };
-    ValidatorService.prototype.ValidateLoginEmail = function (customer) {
-        if (customer.email == undefined || customer.password == undefined) {
+    ValidatorService.prototype.ValidateLoginEmail = function (cleaner) {
+        if (cleaner.email == undefined || cleaner.password == undefined) {
             return false;
         }
         else {
@@ -1320,8 +1406,22 @@ var ValidatorService = /** @class */ (function () {
             return true;
         }
     };
-    ValidatorService.prototype.ValidateLoginPhone = function (customer) {
-        if (customer.phone == undefined || customer.password == undefined) {
+    ValidatorService.prototype.ValidateLoginPhone = function (cleaner) {
+        if (cleaner.phone == undefined || cleaner.password == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ValidatorService.prototype.ValidateRegistrationForm = function (cleaner) {
+        if (cleaner.lastname == undefined || cleaner.firstname == undefined || cleaner.email == undefined ||
+            cleaner.password == undefined || cleaner.address == undefined || cleaner.busstop == undefined ||
+            cleaner.location == undefined || cleaner.area == undefined || cleaner.phone == undefined ||
+            cleaner.id_type == undefined || cleaner.id_url == undefined || cleaner.g_firstname == undefined ||
+            cleaner.g_lastname == undefined || cleaner.g_phone == undefined || cleaner.g_email == undefined ||
+            cleaner.g_address == undefined || cleaner.account_name == undefined || cleaner.accont_no == undefined ||
+            cleaner.bvn == undefined || cleaner.bank == undefined || cleaner.experience == undefined) {
             return false;
         }
         else {

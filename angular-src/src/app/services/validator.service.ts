@@ -10,8 +10,8 @@ export class ValidatorService {
     return re.test(email);
   }
 
-  ValidateLoginEmail(customer){
-    if(customer.email == undefined ||  customer.password == undefined){
+  ValidateLoginEmail(cleaner){
+    if(cleaner.email == undefined || cleaner.password == undefined){
       return false
     }else{
       return true
@@ -26,8 +26,22 @@ export class ValidatorService {
     }
   }
 
-  ValidateLoginPhone(customer){
-    if(customer.phone == undefined ||  customer.password == undefined){
+  ValidateLoginPhone(cleaner){
+    if(cleaner.phone == undefined || cleaner.password == undefined){
+      return false
+    }else{
+      return true
+    }
+  }
+
+  ValidateRegistrationForm(cleaner){
+    if(cleaner.lastname == undefined || cleaner.firstname == undefined || cleaner.email  == undefined || 
+       cleaner.password  == undefined || cleaner.address  == undefined || cleaner.busstop  == undefined || 
+       cleaner.location  == undefined || cleaner.area  == undefined || cleaner.phone  == undefined || 
+       cleaner.id_type  == undefined || cleaner.id_url  == undefined || cleaner.g_firstname  == undefined || 
+       cleaner.g_lastname  == undefined || cleaner.g_phone  == undefined || cleaner.g_email  == undefined || 
+       cleaner.g_address  == undefined || cleaner.account_name  == undefined || cleaner.accont_no  == undefined || 
+       cleaner.bvn  == undefined || cleaner.bank  == undefined || cleaner.experience  == undefined){
       return false
     }else{
       return true

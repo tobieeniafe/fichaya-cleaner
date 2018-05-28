@@ -5,29 +5,29 @@
 			<h4>Cleaning Associate's Registration Form</h4>
 			<h6 class="red-text"><b>NB: ALL FIELDS ARE REQUIRED</b></h6>
 			<br>
-			<form novalidate>
+			<form (submit)="submitForm(location.value, experience.value, bank.value)" novalidate="">
 				<!-- ========
 					personal start
 					============= -->
 				<div class="personal row col m12 s12">
 
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Firstname" name="">
+						<input type="text" placeholder="Firstname" name="firstname" [(ngModel)]="firstname">
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Lastname" name="">
+						<input type="text" placeholder="Lastname" name="lastname" [(ngModel)]="lastname">
 					</div>
 					<div class="input-field col m5 s12">
-						<input type="text" placeholder="Email" name="">
+						<input type="text" placeholder="Email" name="email" [(ngModel)]="email">
 					</div>
 					<div class="input-field col m7 s12">
-						<input type="text" placeholder="Address" name="">
+						<input type="text" placeholder="Address" name="address" [(ngModel)]="address">
 					</div>
 					<div class="input-field col m3 s12">
-						<input type="text" placeholder="Bus-Stop" name="">
+						<input type="text" placeholder="Bus-Stop" name="busstop" [(ngModel)]="busstop">
 					</div>
 					<div class="input-field col m3 s12">
-						<input type="text" placeholder="Area (Lekki, Ikoyi, Yaba)" name="">
+						<input type="text" placeholder="Area (Lekki, Ikoyi, Yaba)" name="area" [(ngModel)]="area">
 					</div>
 					<div class="input-field col m3 s12">
 						<select name="location" #location>
@@ -44,17 +44,17 @@
 				        </select>
 					</div>
 					<div class="input-field col m4 s12">
-						<input type="text" placeholder="Phone" name="">
+						<input type="text" placeholder="Phone" name="phone" [(ngModel)]="phone">
 					</div>
 					<div class="input-field col m4 s12">
-						<input type="text" placeholder="Password" name="">
+						<input type="password" placeholder="Password" name="password" [(ngModel)]="password">
 					</div>
 					<div class="input-field col m4 s12">
-						<input type="text" placeholder="Confirm Password" name="">
+						<input type="password" placeholder="Confirm Password" name="cpassword" [(ngModel)]="cpassword">
 					</div>
 					<div class="col s12 m12">
 						<br><br>
-						<button class="btn show-identification" style="float: right;">Next <i class="ion-ios-arrow-thin-right"></i></button>
+						<button class="btn show-identification" style="float: right;" type="button">Next <i class="ion-ios-arrow-thin-right"></i></button>
 					</div>
 				</div>
 
@@ -71,19 +71,19 @@
 						<div class="col s12 m6">
 							<h6>Form of Identification</h6>
 						    <p>
-						      <input class="with-gap" name="idtype" type="radio" id="id1">
+						      <input class="with-gap" name="idtype" type="radio" id="id1" [(ngModel)]="id_type" value="National ID">
 						      <label for="id1">National ID Card</label>
 						    </p>
 						    <p>
-						      <input class="with-gap" name="idtype" type="radio" id="id2">
+						      <input class="with-gap" name="idtype" type="radio" id="id2" [(ngModel)]="id_type" value="International Passport">
 						      <label for="id2">International Passport</label>
 						    </p>
 						    <p>
-						      <input class="with-gap" name="idtype" type="radio" id="id3">
+						      <input class="with-gap" name="idtype" type="radio" id="id3" [(ngModel)]="id_type" value="Driver's Licence">
 						      <label for="id3">Driver's Licence</label>
 						    </p>
 						    <p>
-						      <input class="with-gap" name="idtype" type="radio" id="id4">
+						      <input class="with-gap" name="idtype" type="radio" id="id4" [(ngModel)]="id_type" value="Voter's Card">
 						      <label for="id4">Voter's Card</label>
 						    </p>
 						</div>
@@ -92,42 +92,53 @@
 								<input type="file" id="file" style="display: none" (change)="handleFileInput($event)" #ImageID>
 							</div>
 							<div class="image-upload-box col s12 m8 center" (click)="ImageID.click()">
-								<i class="ion-camera center" style="font-size: 50px"></i>
+								<i *ngIf="!imageisUploading && !imageUploaded" class="ion-camera center" style="font-size: 50px"></i>
+								<i *ngIf="imageUploaded" class="ion-ios-checkmark-outline center" style="font-size: 50px"></i>
+								
+								<div align='center' *ngIf="imageisUploading">
+								    <div class="preloader-wrapper small active">
+								      <div class="spinner-layer">
+								        <div class="circle-clipper left">
+								          <div class="circle"></div>
+								        </div>
+								        <div class="gap-patch">
+								          <div class="circle"></div>
+								        </div>
+								        <div class="circle-clipper right">
+								          <div class="circle"></div>
+								        </div>
+								      </div>
+								    </div>
+								    <br>
+								</div>
 								<p class="center">Upload Identification Image (.jpg &amp; .png only)</p>
 								{{filename}}
 							</div>
 							<div class="col s12 m2 center"></div>
-							<!-- <div class="btn">
-						        <span>Profile Picture</span>
-						        <input type="file" id="file" (change)="handleFileInput($event)" #ImageID>
-						    </div>
-						    <div class="file-path-wrapper">
-						        <input class="file-path validate" type="text">
-						    </div> -->
 						</div>
 					</div> 
 
 					<h5 class="center">Guarantor's Details</h5>
 
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Firstname" name="">
+						<input type="text" placeholder="Firstname" name="g_firstname" [(ngModel)]="g_firstname">
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Lastname" name="">
+						<input type="text" placeholder="Lastname" name="g_lastname" [(ngModel)]="g_lastname">
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Phone" name="">
+						<input type="text" placeholder="Phone" name="g_phone" [(ngModel)]="g_phone">
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Email" name="">
+						<input type="text" placeholder="Email" name="g_email" [(ngModel)]="g_email">
 					</div>
 					<div class="input-field col m12 s12">
-						<input type="text" placeholder="Address" name="">
+						<input type="text" placeholder="Address" name="g_address" [(ngModel)]="g_address">
 					</div>
 					<div class="col s12 m12">
 						<br><br>
-						<button class="btn show-personal" style="float: left;">Back <i class="ion-ios-arrow-thin-left"></i></button>
-						<button class="btn show-payment-details" style="float: right;">Next <i class="ion-ios-arrow-thin-right"></i></button>
+						<button class="btn show-personal" style="float: left;" type="button">Back <i class="ion-ios-arrow-thin-left"></i></button>
+						<button class="btn show-payment-details" style="float: right;" type="button">Next <i class="ion-ios-arrow-thin-right"></i></button>
 					</div>
 
 				</div>
@@ -143,23 +154,41 @@
 				<div class="row col s12 m12 payment-details">
 					<h5 class="center">Let's Have Your Payment Details</h5>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Account Name" name="account_name">
+						<input type="text" placeholder="Account Name" name="account_name" [(ngModel)]="account_name">
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="Account Number" name="accont_no">
+						<input type="text" placeholder="Account Number" name="accont_no" [(ngModel)]="accont_no">
 					</div>
 					<div class="input-field col m6 s12">
-						<select name="banks" #banks>
+						<select name="bank" #bank>
+							<option disabled="" selected="">Select Bank</option>
 	                        <option *ngFor="let b of allBanks" [ngValue]="b.name">{{b.name}}</option>
 	                    </select>
 					</div>
 					<div class="input-field col m6 s12">
-						<input type="text" placeholder="BVN" name="bvn">
+						<input type="text" placeholder="BVN" name="bvn" [(ngModel)]="bvn">
 					</div>
 					<div class="col s12 m12">
 						<br><br>
-						<button class="btn show-identification" style="float: left;">Back <i class="ion-ios-arrow-thin-left"></i></button>
-						<button class="btn" style="float: right;">Register <i class="ion-ios-paperplane"></i></button>
+						<button class="btn show-identification" style="float: left;" type="button">Back <i class="ion-ios-arrow-thin-left"></i></button>
+
+						<button class="btn" style="float: right;" type="submit" *ngIf="!submitting">Register <i class="ion-ios-paperplane"></i></button>
+						<div align='center' *ngIf="submitting" style="float: right;">
+						    <div class="preloader-wrapper small active">
+						      <div class="spinner-layer">
+						        <div class="circle-clipper left">
+						          <div class="circle"></div>
+						        </div>
+						        <div class="gap-patch">
+						          <div class="circle"></div>
+						        </div>
+						        <div class="circle-clipper right">
+						          <div class="circle"></div>
+						        </div>
+						      </div>
+						    </div>
+						</div>
+
 					</div>
 				</div>
 

@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
 	          }
 	        },
 	        err => (Materialize.toast("something's not right", 3000, 'red white-text')),
-	        () =>  console.log()
+	        () =>  this.preloader = false
 	    );
 	}
 
@@ -115,7 +115,7 @@ export class LoginComponent implements OnInit {
 	          }
 	        },
 	        err => (Materialize.toast("something's not right", 3000, 'red white-text')),
-	        () =>  console.log()
+	        () =>  this.preloader = false
 	    );
 	}
 
