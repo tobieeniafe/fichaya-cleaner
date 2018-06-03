@@ -1,5 +1,5 @@
 .side-nav {
-	background-color: #000080 !important;
+	background-color: #00003d !important;
 	color: #fff;
 	padding-top: 2rem;
 }
@@ -18,7 +18,7 @@
 }
 
 .logout: hover{
-	color: #000080 !important;
+	color: #00003d !important;
 	background-color: #fff;	
 }
 

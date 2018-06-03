@@ -13,13 +13,13 @@ declare var $: any;
 })
 export class BookingComponent implements OnInit {
 
-	title: string = 'Booking'
+	title: string = 'Booking History'
 	bookings: any;
+	noBooking: boolean = false
 
 	constructor(private router: Router, private bookingService: BookingService) {
 		this.getBookings()
 		$(document).ready(function(){
-			//customer sidebar
 			$('.side-nav-open').sideNav({
 			      menuWidth: 300,
 			      edge: 'left',
@@ -41,6 +41,9 @@ export class BookingComponent implements OnInit {
 					Materialize.toast(data.message, 5500, 'green white-text')
 					this.bookings = data.gigs
 					//console.log(data.gigs)
+					if (this.bookings.length == 0) {
+			            this.noBooking = true;
+			        }
 				} else {
 					Materialize.toast("error getting booking", 1500, 'red white-text')
 				}

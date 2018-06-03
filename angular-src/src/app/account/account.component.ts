@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class AccountComponent implements OnInit {
 
-	title: string = 'Account'
+	title: string = 'Account Details'
 	cleaner = new Cleaner();
 	allBanks: any = [
 	    {name:"Access Bank",slug:"access-bank",code:"044",longcode:"044150149"},
@@ -41,6 +41,7 @@ export class AccountComponent implements OnInit {
 	    {name:"Providus Bank",slug:"providus-bank",code:"101",longcode:""},
 	    {name:"Parallex Bank",slug:"parallex-bank",code:"526",longcode:""}
 	];
+	preloader: boolean = false;
 
 	constructor(private router: Router, private accountService: AccountService) {
 		this.getCleaner()
@@ -63,13 +64,14 @@ export class AccountComponent implements OnInit {
 	    this.accountService.getUserDetails().subscribe(
 	       (data: any) => {
 	        if (data.success == true) {
-	           console.log(data.cleaner)
+	           // console.log(data.cleaner)
 	           this.cleaner = data.cleaner
 	        } else {
-	         	Materialize.toast("Something's not right 1", 1500, 'red white-text')
+	         	Materialize.toast("Something's not right", 1500, 'red white-text')
+	         	Materialize.toast(data.message, 1500, 'red white-text')
 	        }
 	       },
-	       err => Materialize.toast("Something's not right 2", 1500, 'red white-text'),
+	       err => Materialize.toast("Something's not right 1", 1500, 'red white-text'),
 	       () => $(document).ready(function() {
 	       			$('select').material_select()
 	       		 })
@@ -77,25 +79,30 @@ export class AccountComponent implements OnInit {
 	}
 
 
-	updateDetails(s,l,t){
-		
+	updateDetails(bank_name){
+		this.preloader = true
 		let query = {
-			
+			phone: this.cleaner.phone,
+			bvn: this.cleaner.bank_details.bvn, 
+			bank: bank_name,
+			account_no: this.cleaner.bank_details.account_no, 
+			account_name: this.cleaner.bank_details.account_name
 		};
-		
-		//console.log(query)
+		// console.log(query)
 		
 		this.accountService.updateDetails(query).subscribe(
 	       (data: any) => {
 	        if (data.success == true) { 
 	           Materialize.toast(data.message, 1500, 'green white-text')
+	           this.preloader = false
 	           // this.getCleaner()
 	        } else {
-	         	Materialize.toast("Something's not right", 1500, 'red white-text')
+	         	Materialize.toast(data.message, 1500, 'red white-text')
+	         	this.preloader = false
 	        }
 	       },
-	       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
-	       () => console.log()
+	       err => (Materialize.toast("Something's not right 2", 1500, 'red white-text'), this.preloader = false),
+	       () => this.preloader = false
 	    );
 	}
 }
@@ -118,6 +125,7 @@ export class Cleaner {
     bank_details: any = {
     	bvn: '',
     	bank: '',
-    	account_no: ''
+    	account_no: '',
+    	account_name: ''
     }
 }

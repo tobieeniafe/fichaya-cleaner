@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
 	g_email: string;
 	g_address: string;
 	account_name: string;
-	accont_no: string;
+	account_no: string;
 	bvn: string;
 	bank: string;
 	id_type: string;
@@ -153,7 +153,7 @@ export class RegisterComponent implements OnInit {
 			g_email: this.g_email,
 			g_address: this.g_address,
 			account_name: this.account_name,
-			accont_no: this.accont_no,
+			account_no: this.account_no,
 			bvn: this.bvn,
 			bank: bank,
 			experience: experience
@@ -182,6 +182,24 @@ export class RegisterComponent implements OnInit {
 		  Materialize.toast('Invalid guarantor email', 2000, 'red white-text');
 		  this.submitting = false;
 		  return false;
+		}
+
+		if (this.cleaner.bank == 'Select Bank') { 
+			Materialize.toast('Please select a bank', 2000, 'red white-text');
+			this.submitting = false;
+			return false;
+		}
+
+		if (this.cleaner.experience == 'Cleaning Experience') { 
+			Materialize.toast('Please select your experience', 2000, 'red white-text');
+			this.submitting = false;
+			return false;
+		}
+
+		if (this.cleaner.location == 'Location') { 
+			Materialize.toast('Please select your location', 2000, 'red white-text');
+			this.submitting = false;
+			return false;
 		}
 
 		this.authService.registerCleaner(this.cleaner).subscribe(

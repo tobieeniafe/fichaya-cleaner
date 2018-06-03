@@ -24,6 +24,9 @@
                 </thead>
 
                 <tbody>
+                  <tr *ngIf='noBooking'><td colspan="7">
+                    <h5 align='center'>You have no bookings at this time</h5>
+                  </td></tr>
                   <tr *ngFor="let b of bookings">
                     <td>{{b.details.date}}</td>
                     <td>{{b.details.time}}</td>
@@ -37,6 +40,7 @@
                       </div>
                     </td>
                   </tr>
+                  <tr></tr>
                 </tbody>
             </table></div>
 

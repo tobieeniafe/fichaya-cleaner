@@ -14,7 +14,7 @@
 
 .hamburger:hover{
 	cursor: pointer;
-    color: #000080;
+    color: #00003d;
 }
 
 .ion-ios-close{
@@ -28,7 +28,7 @@
 }
 
 .side-nav-open, h3, th{
-    color: #000080;
+    color: #00003d;
 }
 
 @media (max-width: 450px) {

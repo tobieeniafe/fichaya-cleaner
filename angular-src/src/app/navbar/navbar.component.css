@@ -101,10 +101,10 @@ nav ul a {
 }
 
 nav ul a:hover {
-  color: #000080;
+  color: #00003d;
   font-weight: bold;
   background-color: transparent;
-  border-bottom: 1.5px solid #000080;
+  border-bottom: 1.5px solid #00003d;
 }
 
 .mobile-toggle {

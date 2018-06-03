@@ -11,7 +11,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000080;
+  color: #00003d;
 }
 
 .form-body{
@@ -38,9 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .image-upload-box{
-  border: 2px dotted #000080;
+  border: 2px dotted #00003d;
   padding: 1rem !important;
   border-radius: 10px;
   cursor: pointer;
-  color: #000080;
+  color: #00003d;
 }

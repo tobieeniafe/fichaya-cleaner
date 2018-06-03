@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    /*bottom: 0;*/\r\n    /*padding: 2rem 5rem 5rem 5rem;*/\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #000080;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.side-nav-open, h3, h5{\r\n    color: #000080;\r\n}\r\n\r\n.table-body{\r\n    box-shadow: 0px 1px 15px 1px #ccc;\r\n    padding: 3rem;\r\n    border-radius: 15px;\r\n}\r\n\r\n@media (max-width: 450px) {\r\n  .table-body{\r\n        padding: 1rem;\r\n    }\r\n}\r\n"
+module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    /*bottom: 0;*/\r\n    /*padding: 2rem 5rem 5rem 5rem;*/\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #00003d;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.side-nav-open, h3, h5{\r\n    color: #00003d;\r\n}\r\n\r\n.table-body{\r\n    box-shadow: 0px 1px 15px 1px #ccc;\r\n    padding: 3rem;\r\n    border-radius: 15px;\r\n}\r\n\r\n@media (max-width: 450px) {\r\n  .table-body{\r\n        padding: 1rem;\r\n    }\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-h
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n            <h4>{{title}}</h4>\n            <br><br>\n\n            <div class=\"row table-body\">\n            <form (submit)=\"updateDetails()\" novalidate=\"\">\n                <h5>Personal Information</h5>\n                \n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Firstname\" name=\"firstname\" [(ngModel)]=\"cleaner.name.firstname\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Lastname\" name=\"lastname\" [(ngModel)]=\"cleaner.name.lastname\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Phone no\" name=\"phone\" [(ngModel)]=\"cleaner.phone\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Email\" name=\"email\" [(ngModel)]=\"cleaner.email\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"BVN\" name=\"bvn\" [(ngModel)]=\"cleaner.bank_details.bvn\" disabled=\"\">\n                </div>\n                 <div class=\"input-field col m3 s12\">\n                    <select name=\"bank\" #bank>\n                        <option selected=\"\" [ngValue]=\"cleaner.bank_details.bank\">{{cleaner.bank_details.bank}}</option>\n                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n                    </select>\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Account No\" name=\"account_no\"  [(ngModel)]=\"cleaner.bank_details.account_no\">\n                </div>\n\n                <div class=\"col s12 center\" style=\"padding-top: 10px\">\n                    <button class=\"btn btn-primary\" type=\"submit\">Update</button>\n                </div>\n\n            </form>\n            </div>\n\n            <br><br>\n\n        </div>      \n    </div>\n</div>\n\n"
+module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n            <h4>{{title}}</h4>\n            <br><br>\n\n            <div class=\"row table-body\">\n            <form (submit)=\"updateDetails(bank.value)\" novalidate=\"\">\n                <h5>Personal Information</h5>\n                \n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Firstname\" name=\"firstname\" [(ngModel)]=\"cleaner.name.firstname\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Lastname\" name=\"lastname\" [(ngModel)]=\"cleaner.name.lastname\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Phone no\" name=\"phone\" [(ngModel)]=\"cleaner.phone\">\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Email\" name=\"email\" [(ngModel)]=\"cleaner.email\" disabled=\"\">\n                </div>\n                <div class=\"input-field col m2 s12\">\n                  <input type=\"text\" placeholder=\"BVN\" name=\"bvn\" [(ngModel)]=\"cleaner.bank_details.bvn\" disabled=\"\">\n                </div>\n                 <div class=\"input-field col m3 s12\">\n                    <select name=\"bank\" #bank>\n                        <option selected=\"\" [ngValue]=\"cleaner.bank_details.bank\">{{cleaner.bank_details.bank}}</option>\n                        <option *ngFor=\"let b of allBanks\" [ngValue]=\"b.name\">{{b.name}}</option>\n                    </select>\n                </div>\n                <div class=\"input-field col m3 s12\">\n                  <input type=\"text\" placeholder=\"Account No\" name=\"account_no\"  [(ngModel)]=\"cleaner.bank_details.account_no\">\n                </div>\n                <div class=\"input-field col m4 s12\">\n                  <input type=\"text\" placeholder=\"Account Name\" name=\"account_name\"  [(ngModel)]=\"cleaner.bank_details.account_name\">\n                </div>\n\n                <div class=\"col s12 center\" style=\"padding-top: 10px\" *ngIf=\"!preloader\">\n                    <button class=\"btn btn-primary\" type=\"submit\">Update</button>\n                </div>\n\n                <div class=\"col s12 center\" align='center' *ngIf=\"preloader\">\n                    <div class=\"preloader-wrapper small active\">\n                      <div class=\"spinner-layer\">\n                        <div class=\"circle-clipper left\">\n                          <div class=\"circle\"></div>\n                        </div>\n                        <div class=\"gap-patch\">\n                          <div class=\"circle\"></div>\n                        </div>\n                        <div class=\"circle-clipper right\">\n                          <div class=\"circle\"></div>\n                        </div>\n                      </div>\n                    </div>\n                </div>\n\n            </form>\n            </div>\n\n            <br><br>\n\n        </div>      \n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -75,7 +75,7 @@ var AccountComponent = /** @class */ (function () {
     function AccountComponent(router, accountService) {
         this.router = router;
         this.accountService = accountService;
-        this.title = 'Account';
+        this.title = 'Account Details';
         this.cleaner = new Cleaner();
         this.allBanks = [
             { name: "Access Bank", slug: "access-bank", code: "044", longcode: "044150149" },
@@ -104,6 +104,7 @@ var AccountComponent = /** @class */ (function () {
             { name: "Providus Bank", slug: "providus-bank", code: "101", longcode: "" },
             { name: "Parallex Bank", slug: "parallex-bank", code: "526", longcode: "" }
         ];
+        this.preloader = false;
         this.getCleaner();
         $(document).ready(function () {
             $('.side-nav-open').sideNav({
@@ -121,28 +122,39 @@ var AccountComponent = /** @class */ (function () {
         var _this = this;
         this.accountService.getUserDetails().subscribe(function (data) {
             if (data.success == true) {
-                console.log(data.cleaner);
+                // console.log(data.cleaner)
                 _this.cleaner = data.cleaner;
             }
             else {
-                Materialize.toast("Something's not right 1", 1500, 'red white-text');
+                Materialize.toast("Something's not right", 1500, 'red white-text');
+                Materialize.toast(data.message, 1500, 'red white-text');
             }
-        }, function (err) { return Materialize.toast("Something's not right 2", 1500, 'red white-text'); }, function () { return $(document).ready(function () {
+        }, function (err) { return Materialize.toast("Something's not right 1", 1500, 'red white-text'); }, function () { return $(document).ready(function () {
             $('select').material_select();
         }); });
     };
-    AccountComponent.prototype.updateDetails = function (s, l, t) {
-        var query = {};
-        //console.log(query)
+    AccountComponent.prototype.updateDetails = function (bank_name) {
+        var _this = this;
+        this.preloader = true;
+        var query = {
+            phone: this.cleaner.phone,
+            bvn: this.cleaner.bank_details.bvn,
+            bank: bank_name,
+            account_no: this.cleaner.bank_details.account_no,
+            account_name: this.cleaner.bank_details.account_name
+        };
+        // console.log(query)
         this.accountService.updateDetails(query).subscribe(function (data) {
             if (data.success == true) {
                 Materialize.toast(data.message, 1500, 'green white-text');
+                _this.preloader = false;
                 // this.getCleaner()
             }
             else {
-                Materialize.toast("Something's not right", 1500, 'red white-text');
+                Materialize.toast(data.message, 1500, 'red white-text');
+                _this.preloader = false;
             }
-        }, function (err) { return Materialize.toast("Something's not right", 1500, 'red white-text'); }, function () { return console.log(); });
+        }, function (err) { return (Materialize.toast("Something's not right 2", 1500, 'red white-text'), _this.preloader = false); }, function () { return _this.preloader = false; });
     };
     AccountComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -170,7 +182,8 @@ var Cleaner = /** @class */ (function () {
         this.bank_details = {
             bvn: '',
             bank: '',
-            account_no: ''
+            account_no: '',
+            account_name: ''
         };
     }
     return Cleaner;
@@ -354,12 +367,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
 /* harmony import */ var _register_register_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./register/register.service */ "./src/app/register/register.service.ts");
+/* harmony import */ var _payments_payments_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./payments/payments.component */ "./src/app/payments/payments.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -387,6 +402,7 @@ var routes = [
     { path: 'cleaner/dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__["DashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
     { path: 'cleaner/booking', component: _booking_booking_component__WEBPACK_IMPORTED_MODULE_14__["BookingComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
     { path: 'cleaner/account', component: _account_account_component__WEBPACK_IMPORTED_MODULE_15__["AccountComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
+    { path: 'cleaner/payments', component: _payments_payments_component__WEBPACK_IMPORTED_MODULE_20__["PaymentsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] },
     { path: '**', component: _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"] }
 ];
 function tokenGetter() {
@@ -405,7 +421,8 @@ var AppModule = /** @class */ (function () {
                 _account_account_component__WEBPACK_IMPORTED_MODULE_15__["AccountComponent"],
                 _register_register_component__WEBPACK_IMPORTED_MODULE_16__["RegisterComponent"],
                 _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__["DashboardComponent"],
-                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_18__["SidebarComponent"]
+                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_18__["SidebarComponent"],
+                _payments_payments_component__WEBPACK_IMPORTED_MODULE_20__["PaymentsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -437,7 +454,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: left 0.5s ease;\r\n    /*padding: 2rem 2rem 2rem 4rem;*/\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #000080;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.table-body{\r\n    box-shadow: 0px 1px 15px 1px #ccc;\r\n    padding: 2rem;\r\n    border-radius: 15px;\r\n}\r\n\r\n.side-nav-open, h3, th{\r\n    color: #000080;\r\n}\r\n\r\n@media (max-width: 450px) {\r\n  .body-view, .table-body{\r\n    padding: 0;\r\n  }\r\n}"
+module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: left 0.5s ease;\r\n    /*padding: 2rem 2rem 2rem 4rem;*/\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #00003d;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.table-body{\r\n    box-shadow: 0px 1px 15px 1px #ccc;\r\n    padding: 2rem;\r\n    border-radius: 15px;\r\n}\r\n\r\n.side-nav-open, h3, th{\r\n    color: #00003d;\r\n}\r\n\r\n@media (max-width: 450px) {\r\n  .body-view, .table-body{\r\n    padding: 0;\r\n  }\r\n}"
 
 /***/ }),
 
@@ -448,7 +465,7 @@ module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-h
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <!-- container starts --> \n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n\n            <h4>{{title}}</h4>\n\n            <div class=\"table-body\"><table class=\"striped\">\n                <thead>\n                  <tr>\n                      <th>Date</th>\n                      <th>Time</th>\n                      <th>Address</th>\n                      <th>Bus-Stop, Area</th>\n                      <th>Location</th>\n                      <th>Type</th>\n                      <th>Completed</th>\n                  </tr>\n                </thead>\n\n                <tbody>\n                  <tr *ngFor=\"let b of bookings\">\n                    <td>{{b.details.date}}</td>\n                    <td>{{b.details.time}}</td>\n                    <td>{{b.address.address}}</td>\n                    <td>{{b.address.busstop}}, {{b.address.area}}</td>\n                    <td>{{b.address.location}}</td>\n                    <td>{{b.type}}</td>\n                    <td>\n                      <div class=\"switch\">\n                          <label>No<input type=\"checkbox\" [checked]=\"b.is_complete\" (change)='markAsComplete(b._id)' value=\"{{b.is_complete}}\"><span class=\"lever\"></span>Yes</label>\n                      </div>\n                    </td>\n                  </tr>\n                </tbody>\n            </table></div>\n\n        </div>\n        <!-- container ends -->      \n    </div>\n</div>\n\n"
+module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <!-- container starts --> \n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n\n            <h4>{{title}}</h4>\n\n            <div class=\"table-body\"><table class=\"striped\">\n                <thead>\n                  <tr>\n                      <th>Date</th>\n                      <th>Time</th>\n                      <th>Address</th>\n                      <th>Bus-Stop, Area</th>\n                      <th>Location</th>\n                      <th>Type</th>\n                      <th>Completed</th>\n                  </tr>\n                </thead>\n\n                <tbody>\n                  <tr *ngIf='noBooking'><td colspan=\"7\">\n                    <h5 align='center'>You have no bookings at this time</h5>\n                  </td></tr>\n                  <tr *ngFor=\"let b of bookings\">\n                    <td>{{b.details.date}}</td>\n                    <td>{{b.details.time}}</td>\n                    <td>{{b.address.address}}</td>\n                    <td>{{b.address.busstop}}, {{b.address.area}}</td>\n                    <td>{{b.address.location}}</td>\n                    <td>{{b.type}}</td>\n                    <td>\n                      <div class=\"switch\">\n                          <label>No<input type=\"checkbox\" [checked]=\"b.is_complete\" (change)='markAsComplete(b._id)' value=\"{{b.is_complete}}\"><span class=\"lever\"></span>Yes</label>\n                      </div>\n                    </td>\n                  </tr>\n                  <tr></tr>\n                </tbody>\n            </table></div>\n\n        </div>\n        <!-- container ends -->      \n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -481,10 +498,10 @@ var BookingComponent = /** @class */ (function () {
     function BookingComponent(router, bookingService) {
         this.router = router;
         this.bookingService = bookingService;
-        this.title = 'Booking';
+        this.title = 'Booking History';
+        this.noBooking = false;
         this.getBookings();
         $(document).ready(function () {
-            //customer sidebar
             $('.side-nav-open').sideNav({
                 menuWidth: 300,
                 edge: 'left',
@@ -503,6 +520,9 @@ var BookingComponent = /** @class */ (function () {
                 Materialize.toast(data.message, 5500, 'green white-text');
                 _this.bookings = data.gigs;
                 //console.log(data.gigs)
+                if (_this.bookings.length == 0) {
+                    _this.noBooking = true;
+                }
             }
             else {
                 Materialize.toast("error getting booking", 1500, 'red white-text');
@@ -608,7 +628,7 @@ var BookingService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: left 0.5s ease;\r\n    padding: 2rem 5rem;\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #000080;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.side-nav-open, h3{\r\n    color: #000080;\r\n}"
+module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: left 0.5s ease;\r\n    padding: 2rem 5rem;\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #00003d;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.side-nav-open, h3{\r\n    color: #00003d;\r\n}"
 
 /***/ }),
 
@@ -619,7 +639,7 @@ module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-h
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n            <h4>{{title}}</h4>\n        </div>      \n    </div>\n</div>\n\n"
+module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n            <h4>{{title}}</h4>\n\n            <h6 class=\"right-align red-text\" *ngIf=\"!verified\">Your account has not been verified or has been suspended. Kindly contact the admin.</h6>\n        </div>      \n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -635,6 +655,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _sidebar_sidebar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sidebar/sidebar.service */ "./src/app/sidebar/sidebar.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -646,12 +667,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(router) {
+    function DashboardComponent(router, sidebarService) {
         this.router = router;
+        this.sidebarService = sidebarService;
         this.title = 'Dashboard';
+        this.getUser();
         $(document).ready(function () {
-            //customer sidebar
             $('.side-nav-open').sideNav({
                 menuWidth: 300,
                 edge: 'left',
@@ -663,13 +686,25 @@ var DashboardComponent = /** @class */ (function () {
         });
     }
     DashboardComponent.prototype.ngOnInit = function () { };
+    DashboardComponent.prototype.getUser = function () {
+        var _this = this;
+        this.sidebarService.getUserName().subscribe(function (data) {
+            if (data.success == true) {
+                // console.log(data)
+                _this.verified = data.cleaner.is_verified;
+            }
+            else {
+                Materialize.toast("Something's not right 1", 1500, 'red white-text');
+            }
+        }, function (err) { return Materialize.toast("Something's not right 2", 1500, 'red white-text'); }, function () { return console.log(); });
+    };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _sidebar_sidebar_service__WEBPACK_IMPORTED_MODULE_2__["SidebarService"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -841,7 +876,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main_h {\r\n  position: fixed;\r\n  max-height: 65px;\r\n  z-index: 999;\r\n  width: 100%;\r\n  padding: 1rem;\r\n  background: none;\r\n  overflow: hidden;\r\n  transition: all 0.3s;\r\n  top: 0px;\r\n  padding-bottom: 6px !important;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .main_h {\r\n    padding-top: 20px;\r\n  }\r\n}\r\n.open-nav {\r\n  min-height: 200px !important;\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n}\r\n.open-nav .mobile-toggle {\r\n  transform: rotate(-90deg);\r\n  -webkit-transform: rotate(-90deg);\r\n}\r\n.sticky {\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n  /*opacity: 1;*/\r\n  top: 0px;\r\n  /*border-bottom: 1px solid gainsboro;*/\r\n}\r\n.logo {\r\n  width: 50px;\r\n  font-size: 25px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  float: left;\r\n  display: block;\r\n  margin-top: 0;\r\n  line-height: 1;\r\n  margin-bottom: 10px;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .logo {\r\n    float: none;\r\n    padding-left: 10px;\r\n  }\r\n}\r\nnav {\r\n  float: right;\r\n  width: 60%;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav {\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul {\r\n  list-style: none;\r\n  overflow: hidden;\r\n  text-align: right;\r\n  float: right;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul {\r\n    padding-top: 10px;\r\n    margin-bottom: 22px;\r\n    float: left;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul li {\r\n  display: inline-block;\r\n  margin-left: 35px;\r\n  line-height: 1;  /*1.5*/\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul li {\r\n    width: 100%;\r\n    padding: 7px 0;\r\n    margin: 0;\r\n  }\r\n}\r\nnav ul a {\r\n  color: #fff;\r\n  text-transform: uppercase; \r\n  padding: 0.3rem 0;\r\n}\r\nnav ul a:hover {\r\n  color: #000080;\r\n  font-weight: bold;\r\n  background-color: transparent;\r\n  border-bottom: 1.5px solid #000080;\r\n}\r\n.mobile-toggle {\r\n  display: none;\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 0;\r\n  width: 30px;\r\n  transition: all 200ms ease-in;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .mobile-toggle {\r\n    display: block;\r\n  }\r\n}\r\n.mobile-toggle span {\r\n  width: 30px;\r\n  height: 4px;\r\n  margin-bottom: 6px;\r\n  border-radius: 1000px;\r\n  background: #fff;\r\n  display: block;\r\n}\r\n.row-nav {\r\n  width: 100%;\r\n  max-width: 940px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  padding: 0;\r\n}\r\na {\r\n  text-decoration: none;\r\n}\r\n@-webkit-keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n@keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n"
+module.exports = ".main_h {\r\n  position: fixed;\r\n  max-height: 65px;\r\n  z-index: 999;\r\n  width: 100%;\r\n  padding: 1rem;\r\n  background: none;\r\n  overflow: hidden;\r\n  transition: all 0.3s;\r\n  top: 0px;\r\n  padding-bottom: 6px !important;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .main_h {\r\n    padding-top: 20px;\r\n  }\r\n}\r\n.open-nav {\r\n  min-height: 200px !important;\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n}\r\n.open-nav .mobile-toggle {\r\n  transform: rotate(-90deg);\r\n  -webkit-transform: rotate(-90deg);\r\n}\r\n.sticky {\r\n  background-color: rgba(0, 0, 0, 0.4);\r\n  /*opacity: 1;*/\r\n  top: 0px;\r\n  /*border-bottom: 1px solid gainsboro;*/\r\n}\r\n.logo {\r\n  width: 50px;\r\n  font-size: 25px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  float: left;\r\n  display: block;\r\n  margin-top: 0;\r\n  line-height: 1;\r\n  margin-bottom: 10px;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .logo {\r\n    float: none;\r\n    padding-left: 10px;\r\n  }\r\n}\r\nnav {\r\n  float: right;\r\n  width: 60%;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav {\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul {\r\n  list-style: none;\r\n  overflow: hidden;\r\n  text-align: right;\r\n  float: right;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul {\r\n    padding-top: 10px;\r\n    margin-bottom: 22px;\r\n    float: left;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\nnav ul li {\r\n  display: inline-block;\r\n  margin-left: 35px;\r\n  line-height: 1;  /*1.5*/\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  nav ul li {\r\n    width: 100%;\r\n    padding: 7px 0;\r\n    margin: 0;\r\n  }\r\n}\r\nnav ul a {\r\n  color: #fff;\r\n  text-transform: uppercase; \r\n  padding: 0.3rem 0;\r\n}\r\nnav ul a:hover {\r\n  color: #00003d;\r\n  font-weight: bold;\r\n  background-color: transparent;\r\n  border-bottom: 1.5px solid #00003d;\r\n}\r\n.mobile-toggle {\r\n  display: none;\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n  position: absolute;\r\n  right: 22px;\r\n  top: 0;\r\n  width: 30px;\r\n  transition: all 200ms ease-in;\r\n}\r\n@media only screen and (max-width: 766px) {\r\n  .mobile-toggle {\r\n    display: block;\r\n  }\r\n}\r\n.mobile-toggle span {\r\n  width: 30px;\r\n  height: 4px;\r\n  margin-bottom: 6px;\r\n  border-radius: 1000px;\r\n  background: #fff;\r\n  display: block;\r\n}\r\n.row-nav {\r\n  width: 100%;\r\n  max-width: 940px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  padding: 0;\r\n}\r\na {\r\n  text-decoration: none;\r\n}\r\n@-webkit-keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n@keyframes scroll {\r\n  0% {\r\n    opacity: 1;\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(20px);\r\n    transform: translateY(20px);\r\n  }\r\n}\r\n"
 
 /***/ }),
 
@@ -937,6 +972,82 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/payments/payments.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/payments/payments.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n.body-view {\r\n    background-color: #fff;\r\n    /*min-height: 100%;*/\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: left 0.5s ease;\r\n    padding: 2rem 5rem;\r\n}\r\n\r\n.hamburger:hover{\r\n\tcursor: pointer;\r\n    color: #00003d;\r\n}\r\n\r\n.ion-ios-close{\r\n    display: none;\r\n}\r\n\r\n.side-nav-open, h3{\r\n    color: #00003d;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/payments/payments.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/payments/payments.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"main-wrap\">    \n    <div class=\"body-view\">\n        <app-sidebar></app-sidebar>\n        <div class=\"container\">\n            <h3 style=\"padding-left: 10rem\"><a href=\"#\" data-activates=\"slide-out\" class=\"side-nav-open\">\n            \t<i class=\"ion-navicon\"></i>\n            </a></h3>\n            <h4>{{title}}</h4>\n\n        </div>      \n    </div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/payments/payments.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/payments/payments.component.ts ***!
+  \************************************************/
+/*! exports provided: PaymentsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentsComponent", function() { return PaymentsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PaymentsComponent = /** @class */ (function () {
+    function PaymentsComponent(router) {
+        this.router = router;
+        this.title = 'Payment History';
+        $(document).ready(function () {
+            $('.side-nav-open').sideNav({
+                menuWidth: 300,
+                edge: 'left',
+                closeOnClick: true,
+                draggable: true,
+                onOpen: function (el) { },
+                onClose: function (el) { }
+            });
+        });
+    }
+    PaymentsComponent.prototype.ngOnInit = function () { };
+    PaymentsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-payments',
+            template: __webpack_require__(/*! ./payments.component.html */ "./src/app/payments/payments.component.html"),
+            styles: [__webpack_require__(/*! ./payments.component.css */ "./src/app/payments/payments.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], PaymentsComponent);
+    return PaymentsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/register/register.component.css":
 /*!*************************************************!*\
   !*** ./src/app/register/register.component.css ***!
@@ -944,7 +1055,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  padding-bottom: 4rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n  color: #000080;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n  max-width: 65%;\r\n  border-radius: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n    max-width: 98%;\r\n  }\r\n}\r\n\r\n.payment-details, .identification{\r\n  display: none;\r\n}\r\n\r\n.image-upload-box{\r\n  border: 2px dotted #000080;\r\n  padding: 1rem !important;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  color: #000080;\r\n}"
+module.exports = ".back{\r\n  background: linear-gradient(0deg,rgba(0, 0, 128, 0.5),rgba(0, 0, 128, 0.5)),url('/assets/images/bg-1.jpg');\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: cover;\r\n  background-color: #111;\r\n  padding-top: 7rem;\r\n  padding-bottom: 4rem;\r\n  text-align: center;\r\n  min-height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n  color: #00003d;\r\n}\r\n\r\n.form-body{\r\n\tbackground-color: #fff;\r\n\tpadding: 2rem 5rem !important;\r\n  max-width: 65%;\r\n  border-radius: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .back {\r\n    padding-top: 5rem;\r\n    min-height: 100%;\r\n  }\r\n  .form-body{\r\n    padding: 1rem 2rem !important;\r\n    max-width: 98%;\r\n  }\r\n}\r\n\r\n.payment-details, .identification{\r\n  display: none;\r\n}\r\n\r\n.image-upload-box{\r\n  border: 2px dotted #00003d;\r\n  padding: 1rem !important;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  color: #00003d;\r\n}"
 
 /***/ }),
 
@@ -1100,7 +1211,7 @@ var RegisterComponent = /** @class */ (function () {
             g_email: this.g_email,
             g_address: this.g_address,
             account_name: this.account_name,
-            accont_no: this.accont_no,
+            account_no: this.account_no,
             bvn: this.bvn,
             bank: bank,
             experience: experience
@@ -1123,6 +1234,21 @@ var RegisterComponent = /** @class */ (function () {
         }
         if (!this.validatorService.ValidateEmail(this.cleaner.g_email)) {
             Materialize.toast('Invalid guarantor email', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (this.cleaner.bank == 'Select Bank') {
+            Materialize.toast('Please select a bank', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (this.cleaner.experience == 'Cleaning Experience') {
+            Materialize.toast('Please select your experience', 2000, 'red white-text');
+            this.submitting = false;
+            return false;
+        }
+        if (this.cleaner.location == 'Location') {
+            Materialize.toast('Please select your location', 2000, 'red white-text');
             this.submitting = false;
             return false;
         }
@@ -1420,7 +1546,7 @@ var ValidatorService = /** @class */ (function () {
             cleaner.location == undefined || cleaner.area == undefined || cleaner.phone == undefined ||
             cleaner.id_type == undefined || cleaner.id_url == undefined || cleaner.g_firstname == undefined ||
             cleaner.g_lastname == undefined || cleaner.g_phone == undefined || cleaner.g_email == undefined ||
-            cleaner.g_address == undefined || cleaner.account_name == undefined || cleaner.accont_no == undefined ||
+            cleaner.g_address == undefined || cleaner.account_name == undefined || cleaner.account_no == undefined ||
             cleaner.bvn == undefined || cleaner.bank == undefined || cleaner.experience == undefined) {
             return false;
         }
@@ -1446,7 +1572,7 @@ var ValidatorService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".side-nav {\r\n\tbackground-color: #000080 !important;\r\n\tcolor: #fff;\r\n\tpadding-top: 2rem;\r\n}\r\n\r\n.side-nav li a h6 {\r\n\tcolor: #fff !important;\r\n}\r\n\r\n.ion{\r\n\tfont-size: 30px;\r\n}\r\n\r\n.avatar{\r\n\twidth: 150px;\r\n\theight: 150px;\r\n}\r\n\r\n.logout: hover{\r\n\tcolor: #000080 !important;\r\n\tbackground-color: #fff;\t\r\n}\r\n\r\nli a h6 {\r\n\tfont-size: 20px;\r\n}"
+module.exports = ".side-nav {\r\n\tbackground-color: #00003d !important;\r\n\tcolor: #fff;\r\n\tpadding-top: 2rem;\r\n}\r\n\r\n.side-nav li a h6 {\r\n\tcolor: #fff !important;\r\n}\r\n\r\n.ion{\r\n\tfont-size: 30px;\r\n}\r\n\r\n.avatar{\r\n\twidth: 150px;\r\n\theight: 150px;\r\n}\r\n\r\n.logout: hover{\r\n\tcolor: #00003d !important;\r\n\tbackground-color: #fff;\t\r\n}\r\n\r\nli a h6 {\r\n\tfont-size: 20px;\r\n}"
 
 /***/ }),
 
@@ -1457,7 +1583,7 @@ module.exports = ".side-nav {\r\n\tbackground-color: #000080 !important;\r\n\tco
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<ul id=\"slide-out\" class=\"side-nav\" align=\"center\">\n    <li><img src=\"{{avatar}}\" class=\"circle avatar\"></li>\n    <li class=\"white-text\"><h5>{{user.firstname}} {{user.lastname}}</h5></li>\n    <li><a routerLink=\"/cleaner/dashboard\"><h6>Dashboard <i class=\"ion ion-ios-speedometer-outline\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/booking\"><h6>Booking History <i class=\"ion ion-ios-clock-outline\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/booking\"><h6>Payment <i class=\"ion ion-card\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/account\"><h6>Profile <i class=\"ion ion-ios-person\"></i></h6></a></li>\n    \n    <br>\n    <button class=\"btn logout\" (click)='logOut()' style=\"color: #fff; border: 2px solid #fff\">Logout <i class=\"ion-log-out\"></i></button>\n</ul>\n  "
+module.exports = "\n<ul id=\"slide-out\" class=\"side-nav\" align=\"center\">\n    <li><img src=\"{{avatar}}\" class=\"circle avatar\"></li>\n    <li class=\"white-text\"><h5>{{user.firstname}} {{user.lastname}}</h5></li>\n    <li><a routerLink=\"/cleaner/dashboard\"><h6>Dashboard <i class=\"ion ion-ios-speedometer-outline\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/booking\"><h6>Booking History <i class=\"ion ion-ios-clock-outline\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/payments\"><h6>Payments <i class=\"ion ion-card\"></i></h6></a></li>\n    <li><a routerLink=\"/cleaner/account\"><h6>Profile <i class=\"ion ion-ios-person\"></i></h6></a></li>\n    \n    <br>\n    <button class=\"btn logout\" (click)='logOut()' style=\"color: #fff; border: 2px solid #fff\">Logout <i class=\"ion-log-out\"></i></button>\n</ul>\n  "
 
 /***/ }),
 

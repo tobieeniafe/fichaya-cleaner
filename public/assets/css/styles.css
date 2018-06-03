@@ -1,17 +1,18 @@
 @font-face {
-    font-family: 'Raleway';
-    src: url('/assets/fonts/Raleway-Regular.ttf');
+    font-family: 'Gotham';
+    src: url('/assets/fonts/GothamRoundedBook.ttf');
+    font-display: auto;
 }
 
 * {
-	font-family: -apple-system, 
+	font-family: /*-apple-system, 
                BlinkMacSystemFont, 
                "Segoe UI", 
                Roboto, 
                Oxygen,
                Ubuntu,
-               Cantarell,
-               "Raleway", 
+               Cantarell,*/
+               "Gotham", 
                sans-serif !important;
 }
 
@@ -29,19 +30,11 @@ h1, h2, h3, h4 {
 }
 
 .primary-text {
-	color: #000080;
+	color: #00003d;
 }
 
 .primary-background {
-	background-color: #000080;
-}
-
-.white-text{
-	color:  #fff;
-}
-
-.white{
-	background-color: #fff;
+	background-color: #00003d;
 }
 
 /*

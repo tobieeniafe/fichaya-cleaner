@@ -10,7 +10,7 @@
             <br><br>
 
             <div class="row table-body">
-            <form (submit)="updateDetails()" novalidate="">
+            <form (submit)="updateDetails(bank.value)" novalidate="">
                 <h5>Personal Information</h5>
                 
                 <div class="input-field col m3 s12">
@@ -25,7 +25,7 @@
                 <div class="input-field col m3 s12">
                   <input type="text" placeholder="Email" name="email" [(ngModel)]="cleaner.email" disabled="">
                 </div>
-                <div class="input-field col m3 s12">
+                <div class="input-field col m2 s12">
                   <input type="text" placeholder="BVN" name="bvn" [(ngModel)]="cleaner.bank_details.bvn" disabled="">
                 </div>
                  <div class="input-field col m3 s12">
@@ -37,9 +37,28 @@
                 <div class="input-field col m3 s12">
                   <input type="text" placeholder="Account No" name="account_no"  [(ngModel)]="cleaner.bank_details.account_no">
                 </div>
+                <div class="input-field col m4 s12">
+                  <input type="text" placeholder="Account Name" name="account_name"  [(ngModel)]="cleaner.bank_details.account_name">
+                </div>
 
-                <div class="col s12 center" style="padding-top: 10px">
+                <div class="col s12 center" style="padding-top: 10px" *ngIf="!preloader">
                     <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+
+                <div class="col s12 center" align='center' *ngIf="preloader">
+                    <div class="preloader-wrapper small active">
+                      <div class="spinner-layer">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                          <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
             </form>

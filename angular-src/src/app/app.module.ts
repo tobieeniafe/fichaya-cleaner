@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RegisterService } from './register/register.service';
+import { PaymentsComponent } from './payments/payments.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'cleaner/dashboard',  component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: 'cleaner/booking',  component: BookingComponent, canActivate: [AuthGuardService] },
   { path: 'cleaner/account',  component: AccountComponent, canActivate: [AuthGuardService] },
+  { path: 'cleaner/payments',  component: PaymentsComponent, canActivate: [AuthGuardService] },
   { path: '**', component: LoginComponent  }
 ];
 
@@ -45,7 +47,8 @@ export function tokenGetter() {
     AccountComponent,
     RegisterComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,

@@ -40,7 +40,7 @@ export class ValidatorService {
        cleaner.location  == undefined || cleaner.area  == undefined || cleaner.phone  == undefined || 
        cleaner.id_type  == undefined || cleaner.id_url  == undefined || cleaner.g_firstname  == undefined || 
        cleaner.g_lastname  == undefined || cleaner.g_phone  == undefined || cleaner.g_email  == undefined || 
-       cleaner.g_address  == undefined || cleaner.account_name  == undefined || cleaner.accont_no  == undefined || 
+       cleaner.g_address  == undefined || cleaner.account_name  == undefined || cleaner.account_no  == undefined || 
        cleaner.bvn  == undefined || cleaner.bank  == undefined || cleaner.experience  == undefined){
       return false
     }else{
